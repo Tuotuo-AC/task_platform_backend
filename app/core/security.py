@@ -30,7 +30,7 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES))
     # 添加过期时间戳和字段access用于区分
     to_encode.update({"exp": expire,'type':'access'})
-    return jwt.encode(to_encode, settings.SECRET_KEY, settings.SECRECT_KEY, algorithm=settings.ALGORITHM)
+    return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
 
 # 生成长期刷新令牌（有效期长，仅用于换取新的 access token，单独存储或放在更安全的地方）
 def create_refresh_token(data: dict) -> str:
