@@ -19,7 +19,7 @@ class Settings:
     # os.getenv() 返回字符串，而我们需要整数用于时间计算。如果环境变量缺失，int(None) 会报错，所以需要转换成int，提供默认值避免None
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES",30))
     # Refresh Token 过期时间（天）
-    ACCESS_TOKEN_EXPIRE_DAYS: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_DAYS",7))
+    REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS",7))
     # Deepseek API KEY
     DEEPSEEK_API_KEY: str = os.getenv("DEEPSEEK_API_KEY")
     # Deepseek API 基础URL(带默认值)
