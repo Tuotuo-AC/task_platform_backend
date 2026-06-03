@@ -5,7 +5,7 @@ celery_app = Celery(
     "task_platform",           # 应用名称
     broker=settings.REDIS_URL,      # 消息代理（broker），用于存储待执行的任务
     backend=settings.REDIS_URL,     # 结构后端，用于存储任务执行结果
-    include=['app.task.ai_tasks']   # 启动时要导入的任务模块列表
+    include=['app.tasks.ai_tasks']   # 启动时要导入的任务模块列表
 )
 
 
